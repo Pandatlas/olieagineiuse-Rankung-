@@ -1,6 +1,6 @@
 
 export enum OilCategory {
-  OLIVE = 'Olive Oil',
+  OLIVE = 'Extra Virgin Olive Oil',
   ARGAN = 'Argan Oil',
   COLZA = 'Canola Oil (Colza)',
   SESAME = 'Sesame Oil',
@@ -14,10 +14,16 @@ export enum AwardType {
   BRONZE = 'Bronze Award'
 }
 
+export type Intensity = 'Delicate' | 'Medium' | 'Robust';
+export type Language = 'en' | 'fr' | 'es' | 'it' | 'ar';
+
 export interface ChemicalAnalysis {
   acidity: number; // %
   peroxideValue: number; // meq O2/kg
   polyphenols: number; // mg/kg
+  fruity?: number; // 0-10 scale
+  bitter?: number; // 0-10 scale
+  pungent?: number; // 0-10 scale
 }
 
 export interface Producer {
@@ -25,6 +31,7 @@ export interface Producer {
   name: string;
   country: string;
   region: string;
+  website?: string;
 }
 
 export interface OilProduct {
@@ -33,6 +40,9 @@ export interface OilProduct {
   producerId: string;
   category: OilCategory;
   score: number; // 0-100
+  intensity: Intensity;
+  varietals: string[];
+  tastingNotes: string[];
   awards: AwardType[];
   analysis: ChemicalAnalysis;
   year: number;
@@ -42,6 +52,9 @@ export interface OilProduct {
 export interface FilterState {
   search: string;
   category: OilCategory | 'All';
+  country: string | 'All';
   award: AwardType | 'All';
+  intensity: Intensity | 'All';
   minScore: number;
+  language: Language;
 }

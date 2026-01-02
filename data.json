@@ -1,0 +1,127 @@
+
+{
+  "producers": [
+    { "id": "p1", "name": "Castillo de Canena", "country": "Spain", "region": "Jaén" },
+    { "id": "p2", "name": "Argan d'Or", "country": "Morocco", "region": "Agadir" },
+    { "id": "p3", "name": "Golden Fields", "country": "France", "region": "Provence" },
+    { "id": "p4", "name": "Oléi", "country": "Spain", "region": "Galicia" },
+    { "id": "p5", "name": "Atlas Heritage", "country": "Morocco", "region": "Marrakech" },
+    { "id": "p6", "name": "Pure Press", "country": "Canada", "region": "Alberta" },
+    { "id": "p7", "name": "Frantoio Franci", "country": "Italy", "region": "Tuscany" },
+    { "id": "p8", "name": "Kyklopas", "country": "Greece", "region": "Makri" },
+    { "id": "p9", "name": "AvoPure", "country": "Mexico", "region": "Michoacán" },
+    { "id": "p10", "name": "Kadoya Mill", "country": "Japan", "region": "Kagawa" }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Family Reserve Picual",
+      "producerId": "p1",
+      "category": "Olive Oil",
+      "score": 98,
+      "awards": ["Best in Class", "Gold Award"],
+      "analysis": { "acidity": 0.12, "peroxideValue": 4.5, "polyphenols": 580 },
+      "year": 2024,
+      "imageUrl": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&q=80&w=400&h=400"
+    },
+    {
+      "id": "2",
+      "name": "Premium Argan Nectar",
+      "producerId": "p2",
+      "category": "Argan Oil",
+      "score": 95,
+      "awards": ["Gold Award"],
+      "analysis": { "acidity": 0.25, "peroxideValue": 8.1, "polyphenols": 620 },
+      "year": 2024,
+      "imageUrl": "https://images.unsplash.com/photo-1620332372374-f108c53d2e03?auto=format&fit=crop&q=80&w=400&h=400"
+    },
+    {
+      "id": "3",
+      "name": "Villa Magra Grand Cru",
+      "producerId": "p7",
+      "category": "Olive Oil",
+      "score": 97,
+      "awards": ["Gold Award"],
+      "analysis": { "acidity": 0.15, "peroxideValue": 5.2, "polyphenols": 610 },
+      "year": 2024,
+      "imageUrl": "https://images.unsplash.com/photo-1541854615901-93c354197834?auto=format&fit=crop&q=80&w=400&h=400"
+    },
+    {
+      "id": "4",
+      "name": "Ages Special Edition",
+      "producerId": "p8",
+      "category": "Olive Oil",
+      "score": 93,
+      "awards": ["Gold Award", "Silver Award"],
+      "analysis": { "acidity": 0.19, "peroxideValue": 6.8, "polyphenols": 490 },
+      "year": 2024,
+      "imageUrl": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&q=80&w=400&h=400"
+    },
+    {
+      "id": "5",
+      "name": "Artisan Colza Gold",
+      "producerId": "p3",
+      "category": "Canola Oil (Colza)",
+      "score": 89,
+      "awards": ["Silver Award"],
+      "analysis": { "acidity": 0.08, "peroxideValue": 2.1, "polyphenols": 150 },
+      "year": 2024,
+      "imageUrl": "https://images.unsplash.com/photo-1626202341410-91a99f16c522?auto=format&fit=crop&q=80&w=400&h=400"
+    },
+    {
+      "id": "6",
+      "name": "Ancestral Argan Heritage",
+      "producerId": "p5",
+      "category": "Argan Oil",
+      "score": 92,
+      "awards": ["Gold Award"],
+      "analysis": { "acidity": 0.31, "peroxideValue": 9.2, "polyphenols": 590 },
+      "year": 2024,
+      "imageUrl": "https://images.unsplash.com/photo-1621340150117-91a62d08316c?auto=format&fit=crop&q=80&w=400&h=400"
+    },
+    {
+      "id": "7",
+      "name": "Coastal Olive Blend",
+      "producerId": "p4",
+      "category": "Olive Oil",
+      "score": 87,
+      "awards": ["Silver Award"],
+      "analysis": { "acidity": 0.18, "peroxideValue": 5.2, "polyphenols": 410 },
+      "year": 2024,
+      "imageUrl": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&q=80&w=400&h=400"
+    },
+    {
+      "id": "8",
+      "name": "Northern Prairie Rapeseed",
+      "producerId": "p6",
+      "category": "Canola Oil (Colza)",
+      "score": 82,
+      "awards": ["Bronze Award"],
+      "analysis": { "acidity": 0.05, "peroxideValue": 1.8, "polyphenols": 120 },
+      "year": 2024,
+      "imageUrl": "https://images.unsplash.com/photo-1626202341410-91a99f16c522?auto=format&fit=crop&q=80&w=400&h=400"
+    },
+    {
+      "id": "9",
+      "name": "Michoacán Extra Virgin",
+      "producerId": "p9",
+      "category": "Avocado Oil",
+      "score": 94,
+      "awards": ["Gold Award", "Best in Class"],
+      "analysis": { "acidity": 0.11, "peroxideValue": 3.9, "polyphenols": 450 },
+      "year": 2024,
+      "imageUrl": "https://images.unsplash.com/photo-1621340150117-91a62d08316c?auto=format&fit=crop&q=80&w=400&h=400"
+    },
+    {
+      "id": "10",
+      "name": "Pure Toasted Sesame",
+      "producerId": "p10",
+      "category": "Sesame Oil",
+      "score": 91,
+      "awards": ["Gold Award"],
+      "analysis": { "acidity": 0.15, "peroxideValue": 2.5, "polyphenols": 380 },
+      "year": 2024,
+      "imageUrl": "https://images.unsplash.com/photo-1541854615901-93c354197834?auto=format&fit=crop&q=80&w=400&h=400"
+    }
+  ]
+}

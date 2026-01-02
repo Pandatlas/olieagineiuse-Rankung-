@@ -2,79 +2,141 @@
 import { OilProduct, OilCategory, AwardType, Producer } from './types';
 
 export const PRODUCERS: Producer[] = [
-  { id: 'p1', name: 'Castillo de Canena', country: 'Spain', region: 'Jaén' },
-  { id: 'p2', name: 'Argan d\'Or', country: 'Morocco', region: 'Agadir' },
-  { id: 'p3', name: 'Golden Fields', country: 'France', region: 'Provence' },
-  { id: 'p4', name: 'Oléi', country: 'Spain', region: 'Galicia' },
-  { id: 'p5', name: 'Atlas Heritage', country: 'Morocco', region: 'Marrakech' },
-  { id: 'p6', name: 'Pure Press', country: 'Canada', region: 'Alberta' },
+  { "id": "p1", "name": "Castillo de Canena", "country": "Spain", "region": "Jaén", "website": "castillodecanena.com" },
+  { "id": "p2", "name": "Frantoio Franci", "country": "Italy", "region": "Tuscany", "website": "frantoiofranci.it" },
+  { "id": "p3", "name": "Almazaras de la Subbética", "country": "Spain", "region": "Córdoba" },
+  { "id": "p5", "name": "Coopérative Tighanimine", "country": "Morocco", "region": "Souss-Massa", "website": "tighanimine.com" },
+  { "id": "p6", "name": "Coopérative Taitmatine", "country": "Morocco", "region": "Taroudant" },
+  { "id": "p7", "name": "Coopérative Ajddigue", "country": "Morocco", "region": "Essaouira" },
+  { "id": "p8", "name": "Coopérative Toudarte", "country": "Morocco", "region": "Agadir" },
+  { "id": "p9", "name": "Kyklopas", "country": "Greece", "region": "Makri" },
+  { "id": "p10", "name": "Domenica Fiore", "country": "Italy", "region": "Umbria" },
+  { "id": "p11", "name": "Cho Group (Terra Delyssa)", "country": "Tunisia", "region": "Kairouan" },
+  { "id": "p12", "name": "Herdade do Esporão", "country": "Portugal", "region": "Alentejo" },
+  { "id": "p13", "name": "Nova Vera", "country": "Turkey", "region": "Ayvalık" },
+  { "id": "p14", "name": "California Olive Ranch", "country": "USA", "region": "California" },
+  { "id": "p15", "name": "Laur Olive Oil", "country": "Argentina", "region": "Mendoza" },
+  { "id": "p16", "name": "Chiavalon", "country": "Croatia", "region": "Istria" }
 ];
 
 export const OIL_PRODUCTS: OilProduct[] = [
   {
-    id: '1',
-    name: 'Family Reserve Picual',
-    producerId: 'p1',
-    category: OilCategory.OLIVE,
-    score: 98,
-    awards: [AwardType.BEST_IN_CLASS, AwardType.GOLD],
-    analysis: { acidity: 0.12, peroxideValue: 4.5, polyphenols: 580 },
-    year: 2024,
-    imageUrl: 'https://picsum.photos/seed/olive1/400/400'
+    "id": "arg-tm-1",
+    "name": "Huile d'Argan Torréfiée (IGP Maroc)",
+    "producerId": "p5",
+    "category": OilCategory.ARGAN,
+    "score": 97,
+    "intensity": "Robust",
+    "varietals": ["Argania Spinosa"],
+    "tastingNotes": ["Toasted Hazelnut", "Warm Sesame", "Crème Brûlée"],
+    "awards": [AwardType.BEST_IN_CLASS, AwardType.GOLD],
+    "analysis": { 
+      "acidity": 0.18, "peroxideValue": 5.2, "polyphenols": 690,
+      "fruity": 9.5, "bitter": 2.0, "pungent": 3.0
+    },
+    "year": 2025,
+    "imageUrl": "https://images.unsplash.com/photo-1620332372374-f108c53d2e03?auto=format&fit=crop&q=80&w=400&h=400"
   },
   {
-    id: '2',
-    name: 'Premium Argan Nectar',
-    producerId: 'p2',
-    category: OilCategory.ARGAN,
-    score: 95,
-    awards: [AwardType.GOLD],
-    analysis: { acidity: 0.25, peroxideValue: 8.1, polyphenols: 620 },
-    year: 2024,
-    imageUrl: 'https://picsum.photos/seed/argan1/400/400'
+    "id": "tun-1",
+    "name": "Terra Delyssa Premium Bio",
+    "producerId": "p11",
+    "category": OilCategory.OLIVE,
+    "score": 93,
+    "intensity": "Delicate",
+    "varietals": ["Chetoui", "Chemlali"],
+    "tastingNotes": ["Artichoke", "Mild Pepper", "Green Apple"],
+    "awards": [AwardType.GOLD],
+    "analysis": { 
+      "acidity": 0.21, "peroxideValue": 6.1, "polyphenols": 420,
+      "fruity": 7.0, "bitter": 3.0, "pungent": 3.5
+    },
+    "year": 2025,
+    "imageUrl": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&q=80&w=400&h=400"
   },
   {
-    id: '3',
-    name: 'Artisan Colza Gold',
-    producerId: 'p3',
-    category: OilCategory.COLZA,
-    score: 89,
-    awards: [AwardType.SILVER],
-    analysis: { acidity: 0.08, peroxideValue: 2.1, polyphenols: 150 },
-    year: 2024,
-    imageUrl: 'https://picsum.photos/seed/colza1/400/400'
+    "id": "1",
+    "name": "Reserva Familiar Picual",
+    "producerId": "p1",
+    "category": OilCategory.OLIVE,
+    "score": 99,
+    "intensity": "Robust",
+    "varietals": ["Picual"],
+    "tastingNotes": ["Tomato leaf", "Green Grass", "Artichoke"],
+    "awards": [AwardType.BEST_IN_CLASS, AwardType.GOLD],
+    "analysis": { 
+      "acidity": 0.11, "peroxideValue": 3.8, "polyphenols": 640,
+      "fruity": 8.5, "bitter": 7.0, "pungent": 7.5
+    },
+    "year": 2025,
+    "imageUrl": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&q=80&w=400&h=400"
   },
   {
-    id: '4',
-    name: 'Ancestral Argan Oil',
-    producerId: 'p5',
-    category: OilCategory.ARGAN,
-    score: 92,
-    awards: [AwardType.GOLD],
-    analysis: { acidity: 0.31, peroxideValue: 9.2, polyphenols: 590 },
-    year: 2024,
-    imageUrl: 'https://picsum.photos/seed/argan2/400/400'
+    "id": "por-1",
+    "name": "Esporão Selecção",
+    "producerId": "p12",
+    "category": OilCategory.OLIVE,
+    "score": 95,
+    "intensity": "Medium",
+    "varietals": ["Galega", "Cobrançosa"],
+    "tastingNotes": ["Walnut Shell", "Ripe Fruits"],
+    "awards": [AwardType.GOLD],
+    "analysis": { 
+      "acidity": 0.14, "peroxideValue": 4.8, "polyphenols": 510,
+      "fruity": 7.8, "bitter": 4.5, "pungent": 5.0
+    },
+    "year": 2025,
+    "imageUrl": "https://images.unsplash.com/photo-1541854615901-93c354197834?auto=format&fit=crop&q=80&w=400&h=400"
   },
   {
-    id: '5',
-    name: 'Coastal Olive Blend',
-    producerId: 'p4',
-    category: OilCategory.OLIVE,
-    score: 87,
-    awards: [AwardType.SILVER],
-    analysis: { acidity: 0.18, peroxideValue: 5.2, polyphenols: 410 },
-    year: 2024,
-    imageUrl: 'https://picsum.photos/seed/olive2/400/400'
+    "id": "cro-1",
+    "name": "Chiavalon Ex Albis",
+    "producerId": "p16",
+    "category": OilCategory.OLIVE,
+    "score": 96,
+    "intensity": "Robust",
+    "varietals": ["Buža", "Istarska Bjelica"],
+    "tastingNotes": ["Wild Asparagus", "Chicory", "Black Pepper"],
+    "awards": [AwardType.BEST_IN_CLASS, AwardType.GOLD],
+    "analysis": { 
+      "acidity": 0.12, "peroxideValue": 3.9, "polyphenols": 590,
+      "fruity": 8.2, "bitter": 6.5, "pungent": 7.0
+    },
+    "year": 2025,
+    "imageUrl": "https://images.unsplash.com/photo-1620332372374-f108c53d2e03?auto=format&fit=crop&q=80&w=400&h=400"
   },
   {
-    id: '6',
-    name: 'Northern Prairie Rapeseed',
-    producerId: 'p6',
-    category: OilCategory.COLZA,
-    score: 82,
-    awards: [AwardType.BRONZE],
-    analysis: { acidity: 0.05, peroxideValue: 1.8, polyphenols: 120 },
-    year: 2024,
-    imageUrl: 'https://picsum.photos/seed/colza2/400/400'
+    "id": "arg-tm-2",
+    "name": "Huile d'Argan Extra Vierge Bio",
+    "producerId": "p6",
+    "category": OilCategory.ARGAN,
+    "score": 94,
+    "intensity": "Medium",
+    "varietals": ["Argania Spinosa"],
+    "tastingNotes": ["Fresh Almond", "Green Walnut", "Floral Honey"],
+    "awards": [AwardType.GOLD],
+    "analysis": { 
+      "acidity": 0.22, "peroxideValue": 6.8, "polyphenols": 610,
+      "fruity": 7.5, "bitter": 2.5, "pungent": 2.5
+    },
+    "year": 2025,
+    "imageUrl": "https://images.unsplash.com/photo-1621340150117-91a62d08316c?auto=format&fit=crop&q=80&w=400&h=400"
+  },
+  {
+    "id": "usa-1",
+    "name": "Miller's Blend",
+    "producerId": "p14",
+    "category": OilCategory.OLIVE,
+    "score": 92,
+    "intensity": "Medium",
+    "varietals": ["Arbequina", "Arbosana"],
+    "tastingNotes": ["Fruity", "Light Herbaceous"],
+    "awards": [AwardType.SILVER],
+    "analysis": { 
+      "acidity": 0.17, "peroxideValue": 5.5, "polyphenols": 380,
+      "fruity": 6.5, "bitter": 3.5, "pungent": 4.0
+    },
+    "year": 2025,
+    "imageUrl": "https://images.unsplash.com/photo-1626202341410-91a99f16c522?auto=format&fit=crop&q=80&w=400&h=400"
   }
 ];

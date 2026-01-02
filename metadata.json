@@ -1,5 +1,9 @@
 {
   "name": "World Oil Ranking Portal",
-  "description": "A high-end ranking platform for premium oils (Argan, Colza, Olive, etc.) inspired by NYIOOC, featuring chemical analysis tracking, award management, and AI-powered quality insights.",
-  "requestFramePermissions": []
+  "description": "A high-end ranking platform for premium oils (Argan, Colza, Olive, etc.) featuring a full Gemini AI Studio for generation, editing, and voice interaction.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
 }
