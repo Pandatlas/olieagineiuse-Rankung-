@@ -1,17 +1,27 @@
 
 import React, { useState, useEffect } from 'react';
-import { PRODUCERS } from './data';
-import { FilterState, Language, OilProduct } from './types';
-import { translations } from './translations';
-import { OliveOilTimesAPI } from './services/apiService';
-import RankingTable from './components/RankingTable';
-import FilterBar from './components/FilterBar';
-import ChatBot from './components/ChatBot';
-import AiHub from './components/AiHub';
+import { PRODUCERS } from './data.ts';
+import { FilterState, Language, OilProduct } from './types.ts';
+import { translations } from './translations.ts';
+import { OliveOilTimesAPI } from './services/apiService.ts';
+import RankingTable from './components/RankingTable.tsx';
+import FilterBar from './components/FilterBar.tsx';
+import ChatBot from './components/ChatBot.tsx';
+import AiHub from './components/AiHub.tsx';
+import AuthModal from './components/AuthModal.tsx';
 
 const App: React.FC = () => {
   const [isAiHubOpen, setIsAiHubOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
+  
+  // Initialisation synchronisée avec la classe du document
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return document.documentElement.classList.contains('dark');
+    }
+    return false;
+  });
+  
   const [products, setProducts] = useState<OilProduct[]>([]);
   const [loading, setLoading] = useState(true);
   const [filters, setFilters] = useState<FilterState>({
@@ -26,21 +36,28 @@ const App: React.FC = () => {
 
   const t = translations[filters.language];
 
-  // Effet pour appliquer physiquement la classe dark sur le document
+  // Gestion de la persistance du thème et de la classe HTML
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
   }, [isDarkMode]);
 
   useEffect(() => {
     const loadData = async () => {
       setLoading(true);
-      const results = await OliveOilTimesAPI.getRankings(filters);
-      setProducts(results);
-      setLoading(false);
+      try {
+        const results = await OliveOilTimesAPI.getRankings(filters);
+        setProducts(results);
+      } catch (error) {
+        console.error("Erreur lors du chargement des données:", error);
+      } finally {
+        setLoading(false);
+      }
     };
     loadData();
   }, [filters]);
@@ -88,7 +105,7 @@ const App: React.FC = () => {
                     className={`w-full text-left px-4 py-3 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 flex items-center gap-3 transition-colors ${filters.language === lang ? 'bg-amber-50 dark:bg-amber-900/20 text-amber-600' : ''}`}
                   >
                     <span className="uppercase text-[10px] font-black">{lang}</span>
-                    <span className="text-[10px]">
+                    <span className="ml-2 text-[10px]">
                         {lang === 'en' && 'English'}
                         {lang === 'fr' && 'Français'}
                         {lang === 'es' && 'Español'}
@@ -108,7 +125,15 @@ const App: React.FC = () => {
               {t.aiStudio}
             </button>
             <div className="h-6 w-px bg-slate-800"></div>
-            <a href="#" className="hover:text-amber-500 transition-colors">{t.winners}</a>
+            
+            <button 
+              onClick={() => setIsAuthOpen(true)}
+              className="flex items-center gap-2 text-white hover:text-amber-500 transition-colors"
+            >
+              <i className="fa-solid fa-circle-user text-xl"></i>
+              <span className="hidden xl:inline">{t.clientPortal}</span>
+            </button>
+
             <button className="bg-slate-800 border border-slate-700 hover:bg-slate-700 px-5 py-2 rounded-full transition-all">
               {t.submit}
             </button>
@@ -117,6 +142,9 @@ const App: React.FC = () => {
           <div className="lg:hidden flex items-center gap-4">
              <button className="text-amber-500 w-10 h-10 bg-slate-800 rounded-lg" onClick={toggleDarkMode}>
                <i className={`fa-solid ${isDarkMode ? 'fa-sun' : 'fa-moon'}`}></i>
+             </button>
+             <button className="text-amber-500 w-10 h-10 bg-slate-800 rounded-lg" onClick={() => setIsAuthOpen(true)}>
+               <i className="fa-solid fa-circle-user"></i>
              </button>
              <button className="text-xl text-amber-500" onClick={() => setIsAiHubOpen(true)}>
                 <i className="fa-solid fa-wand-sparkles"></i>
@@ -179,7 +207,7 @@ const App: React.FC = () => {
             {loading ? (
               <div className="h-96 flex flex-col items-center justify-center space-y-4">
                 <div className="w-12 h-12 border-4 border-amber-600 border-t-transparent rounded-full animate-spin"></div>
-                <p className="text-xs font-black uppercase tracking-widest text-slate-400">Querying Official Database...</p>
+                <p className="text-xs font-black uppercase tracking-widest text-slate-400 italic">Querying Official Database...</p>
               </div>
             ) : (
               <RankingTable products={products} producers={PRODUCERS} language={filters.language} />
@@ -189,19 +217,20 @@ const App: React.FC = () => {
       </main>
 
       <AiHub isOpen={isAiHubOpen} onClose={() => setIsAiHubOpen(false)} language={filters.language} />
+      <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} language={filters.language} />
       <ChatBot language={filters.language} />
 
       <footer className="mt-24 py-16 bg-slate-900 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 text-center md:text-left">
           <div className="grid md:grid-cols-4 gap-12 text-slate-400">
              <div className="col-span-2">
-                <div className="flex items-center space-x-3 mb-6">
+                <div className="flex items-center justify-center md:justify-start space-x-3 mb-6">
                   <div className="bg-amber-600 p-2 rounded-lg">
                     <i className="fa-solid fa-crown text-white text-xl"></i>
                   </div>
                   <h3 className="text-white text-xl font-black uppercase tracking-tighter">{t.title}</h3>
                 </div>
-                <p className="text-sm leading-relaxed max-w-sm mb-6">
+                <p className="text-sm leading-relaxed max-w-sm mb-6 mx-auto md:mx-0">
                   The Gemini World Oil Ranking 2025 is the authoritative guide to the world’s most exceptional oils, verified by high-end Gemini AI Intelligence.
                 </p>
              </div>
@@ -219,6 +248,9 @@ const App: React.FC = () => {
                   <li><a href="#" className="hover:text-amber-500 transition-colors">Privacy Policy</a></li>
                 </ul>
              </div>
+          </div>
+          <div className="mt-12 pt-8 border-t border-slate-800 text-[10px] text-slate-500 uppercase tracking-widest">
+            © 2025 World Oil Ranking Portal. Powered by Google Gemini AI.
           </div>
         </div>
       </footer>

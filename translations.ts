@@ -30,7 +30,20 @@ export const translations = {
     listen: "Listen to Profile",
     close: "Close Profile",
     chatPlaceholder: "Type your message...",
-    expertEngine: "Expert Knowledge Engine"
+    expertEngine: "Expert Knowledge Engine",
+    clientPortal: "Client VIP",
+    join: "Join",
+    login: "Login",
+    role: "User Role",
+    producer: "Producer",
+    operator: "Operator",
+    vipClient: "VIP Client",
+    email: "Email Address",
+    brandName: "Brand/Org Name",
+    password: "Password",
+    forgotPassword: "Forgot Password?",
+    noAccount: "Don't have an account?",
+    hasAccount: "Already a member?"
   },
   fr: {
     title: "Classement Mondial des Huiles",
@@ -62,7 +75,20 @@ export const translations = {
     listen: "Écouter le Profil",
     close: "Fermer le Profil",
     chatPlaceholder: "Écrivez votre message...",
-    expertEngine: "Moteur de Connaissances Expert"
+    expertEngine: "Moteur de Connaissances Expert",
+    clientPortal: "Client VIP",
+    join: "Adhésion",
+    login: "Connexion",
+    role: "Type d'Utilisateur",
+    producer: "Producteur",
+    operator: "Opérateur",
+    vipClient: "Client VIP",
+    email: "Adresse Email",
+    brandName: "Nom de la Marque/Org",
+    password: "Mot de passe",
+    forgotPassword: "Mot de passe oublié ?",
+    noAccount: "Pas encore membre ?",
+    hasAccount: "Déjà membre ?"
   },
   es: {
     title: "Ranking Mundial de Aceites",
@@ -94,7 +120,20 @@ export const translations = {
     listen: "Escuchar Perfil",
     close: "Cerrar Perfil",
     chatPlaceholder: "Escribe tu mensaje...",
-    expertEngine: "Motor de Conocimiento Experto"
+    expertEngine: "Motor de Conocimiento Experto",
+    clientPortal: "Cliente VIP",
+    join: "Afiliarse",
+    login: "Acceso",
+    role: "Rol de Usuario",
+    producer: "Productor",
+    operator: "Operador",
+    vipClient: "Cliente VIP",
+    email: "Correo Electrónico",
+    brandName: "Nombre de Marca/Org",
+    password: "Contraseña",
+    forgotPassword: "¿Olvidó su contraseña?",
+    noAccount: "¿No tiene cuenta?",
+    hasAccount: "¿Ya es miembro?"
   },
   it: {
     title: "Classifica Mondiale Oli",
@@ -126,7 +165,20 @@ export const translations = {
     listen: "Ascolta Profilo",
     close: "Chiudi Profilo",
     chatPlaceholder: "Scrivi un messaggio...",
-    expertEngine: "Motore di Conoscenza Esperto"
+    expertEngine: "Motore di Conoscenza Esperto",
+    clientPortal: "Cliente VIP",
+    join: "Aderisci",
+    login: "Accedi",
+    role: "Ruolo Utente",
+    producer: "Produttore",
+    operator: "Operatore",
+    vipClient: "Cliente VIP",
+    email: "Indirizzo Email",
+    brandName: "Nome Brand/Org",
+    password: "Password",
+    forgotPassword: "Password dimenticata?",
+    noAccount: "Non sei ancora membro?",
+    hasAccount: "Sei già membro?"
   },
   ar: {
     title: "التصنيف العالمي للزيوت",
@@ -158,6 +210,19 @@ export const translations = {
     listen: "استمع للملف",
     close: "إغلاق الملف",
     chatPlaceholder: "اكتب رسالتك...",
-    expertEngine: "محرك المعرفة الخبير"
+    expertEngine: "محرك المعرفة الخبير",
+    clientPortal: "عميل VIP",
+    join: "انضمام",
+    login: "تسجيل الدخول",
+    role: "نوع المستخدم",
+    producer: "منتج",
+    operator: "مشغل",
+    vipClient: "عميل VIP",
+    email: "البريد الإلكتروني",
+    brandName: "اسم العلامة التجارية/المنظمة",
+    password: "كلمة المرور",
+    forgotPassword: "نسيت كلمة المرور؟",
+    noAccount: "ليس لديك حساب؟",
+    hasAccount: "لديك حساب بالفعل؟"
   }
 };
